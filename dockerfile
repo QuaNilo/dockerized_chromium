@@ -2,7 +2,9 @@ FROM alpine:edge
 
 ARG USER=browser
 
-RUN apk add --no-cache chromium && \
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache chromium && \
     adduser -D $USER
 
 USER $USER
